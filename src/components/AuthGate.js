@@ -10,9 +10,12 @@ export default function AuthGate({ onReady }) {
   const [secret, setSecret] = useState('');
   const [busy, setBusy] = useState(false);
 
+  const MIN_LEN = 4;
+  const tooShort = secret.trim().length > 0 && secret.trim().length < MIN_LEN;
+
   const submit = async (e) => {
     e.preventDefault();
-    if (secret.trim().length < 4) return;
+    if (secret.trim().length < MIN_LEN) return;
     setBusy(true);
     const hash = await hashSecret(secret);
     setUserHash(hash);
@@ -39,9 +42,14 @@ export default function AuthGate({ onReady }) {
           placeholder="Secret passphrase"
           className="w-full rounded-xl border border-slate-200 px-4 py-3 text-center outline-none focus:border-accent"
         />
+        <p className={`mt-2 text-center text-xs ${tooShort ? 'text-danger' : 'text-slate-400'}`}>
+          {tooShort
+            ? `At least ${MIN_LEN} characters`
+            : 'First time? Any passphrase creates your account. Use a long, unique one.'}
+        </p>
         <button
           type="submit"
-          disabled={busy || secret.trim().length < 4}
+          disabled={busy || secret.trim().length < MIN_LEN}
           className="mt-3 w-full rounded-xl bg-accent py-3 font-semibold text-white disabled:opacity-40"
         >
           {busy ? 'Setting up…' : 'Continue'}
