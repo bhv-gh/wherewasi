@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/wherewasi/static/css/main.17aa95ca.css",
-    "main.js": "/wherewasi/static/js/main.931d99a3.js",
+    "main.js": "/wherewasi/static/js/main.42a61189.js",
     "static/js/453.37f1326b.chunk.js": "/wherewasi/static/js/453.37f1326b.chunk.js",
     "index.html": "/wherewasi/index.html",
     "main.17aa95ca.css.map": "/wherewasi/static/css/main.17aa95ca.css.map",
-    "main.931d99a3.js.map": "/wherewasi/static/js/main.931d99a3.js.map",
+    "main.42a61189.js.map": "/wherewasi/static/js/main.42a61189.js.map",
     "453.37f1326b.chunk.js.map": "/wherewasi/static/js/453.37f1326b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.17aa95ca.css",
-    "static/js/main.931d99a3.js"
+    "static/js/main.42a61189.js"
   ]
 }
