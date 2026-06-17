@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import AuthGate from './components/AuthGate';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+// App pulls in the Supabase client at import time, so the smoke test targets
+// the first screen the user sees instead.
+test('renders the auth gate on first run', () => {
+  render(<AuthGate onReady={() => {}} />);
+  expect(screen.getByText(/Where Was I/i)).toBeInTheDocument();
+  expect(screen.getByPlaceholderText(/secret passphrase/i)).toBeInTheDocument();
 });

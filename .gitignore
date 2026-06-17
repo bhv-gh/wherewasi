@@ -13,6 +13,12 @@
 
 # misc
 .DS_Store
+
+# local reference copy of the oneui app (used only to mirror patterns — do not commit)
+/oneui
+
+# env (keys live here — never commit; copy .env.example to .env locally)
+.env
 .env.local
 .env.development.local
 .env.test.local
